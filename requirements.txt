@@ -1,6 +1,6 @@
 streamlit
-streamlit-authenticator
-yaml
+#streamlit-authenticator
+#yaml
 openai
 llama-index
 nltk
