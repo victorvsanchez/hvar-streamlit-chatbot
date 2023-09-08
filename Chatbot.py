@@ -25,7 +25,7 @@ def load_data():
     with st.spinner(text="Carregando os documentos..."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="Use apenas o documentos carregado para responder à pergunta. Se você não sabe a resposta, apenas diga que não sabe, não tente dar uma resposta. Use no máximo três frases e mantenha a resposta o mais concisa possível. Sempre diga 'obrigado por perguntar!' ao final da resposta."))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="Responda à pergunta em português. Use apenas o documento carregado para responder à pergunta. Se você não sabe a resposta, diga 'desculpe, eu não sei a resposta para essa pergunta', não tente dar uma resposta. Use no máximo três frases e mantenha a resposta o mais concisa possível. Sempre diga 'obrigado por perguntar!' ao final da resposta."))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
