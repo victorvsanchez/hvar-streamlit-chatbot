@@ -25,7 +25,7 @@ def load_data():
     with st.spinner(text="Carregando os documentos..."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert on the Streamlit Python library and your job is to answer technical questions. Assume that all questions are related to the Streamlit Python library. Keep your answers technical and based on facts – do not hallucinate features."))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="Use os documentos carregados para responder à pergunta. Se você não sabe a resposta, apenas diga que não sabe, não tente dar uma resposta. Use no máximo três frases e mantenha a resposta o mais concisa possível. Sempre diga 'obrigado por perguntar!' ao final da resposta."))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
