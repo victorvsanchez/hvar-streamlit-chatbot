@@ -1,0 +1,14 @@
+credentials:
+  usernames:
+    jsmith:
+      email: admin@gmail.com
+      name: PWC Admin
+      password: $2b$12$ko9Dy1qKJVEIHGMAotN9huyqmBBX8QLQFUf/xVCSGZomSNu2zvHGy
+    rbriggs:
+      email: user@gmail.com
+      name: PWC User
+      password: $2b$12$ko9Dy1qKJVEIHGMAotN9huyqmBBX8QLQFUf/xVCSGZomSNu2zvHGy
+cookie:
+  expiry_days: 0
+  key: random_signature_key
+  name: random_cookie_name
