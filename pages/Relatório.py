@@ -44,7 +44,7 @@ st.plotly_chart(fig2, theme=None, use_container_width=True)
 
 ### Número de requisições por dia
 chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
+    np.random.randint(low=0, high=10, size = (20, 3)),
     columns = ['Dia', 'Respostas incorretas', 'Respostas corretas'])
 
 st.header("Número de requisições por dia")
