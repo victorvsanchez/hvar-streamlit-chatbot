@@ -6,9 +6,10 @@ data = pd.read_csv("data/former_questions.csv", sep=";")
 #Add new data
 msg_num = 0
 for message in st.session_state.messages:
-    msg_num = msg_num + 1
     new_record = ["Admin", msg_num, message["role"], message["content"], 0, 1]
-    data.loc[len(data.index)] = new_record
+    if msg_num >= 1:
+        data.loc[len(data.index)] = new_record
+    msg_num = msg_num + 1
 
 for i in data.index:
     with st.chat_message(data["role"][i]):
