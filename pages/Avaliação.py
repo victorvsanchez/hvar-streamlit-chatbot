@@ -16,8 +16,11 @@ for i in data.index:
         st.write(data["message"][i])
         if not data["graded"][i] and data["role"][i]=="assistant":
             st.write("Essa resposta não foi avaliada ainda. Ela está correta?")
-            st.button("Sim", key=str(i) + "_hist_yes")
-            st.button("Não", key=str(i) + "_hist_no")
+            if st.button("Sim", key=str(i) + "_hist_yes"):
+                st.write("Yes")
+            if st.button("Não", key=str(i) + "_hist_no"):
+                st.write("No")
+
         else:
             if data["correct"][i] and data["role"][i]=="assistant":
                 st.write("Essa resposta foi avaliada como correta")
