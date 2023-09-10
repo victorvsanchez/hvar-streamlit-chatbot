@@ -13,5 +13,5 @@ for i in data.index:
         else:
             if data["correct"][i] and data["role"][i]=="assistant":
                 st.write("Essa resposta foi avaliada como correta")
-            else:
-                st.write("Essa resposta foi avaliada como errada")
+            elif data["correct"][i] and data["role"][i]=="assistant":
+                st.write("sa resposta foi avaliada como errada")
