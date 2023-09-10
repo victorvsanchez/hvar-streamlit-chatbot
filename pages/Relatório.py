@@ -3,8 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-data = pd.read_csv("data/former_questions.csv", sep=";")
-
 ### Porcentagem de perguntas corretas
 incorr = 0
 corr = 0
