@@ -1,17 +1,24 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
 data = pd.read_csv("data/former_questions.csv", sep=";")
 
+incorr = 0
+corr = 0
+
 for i in data.index:
-    with st.chat_message(data["role"][i]):
-        st.write(data["message"][i])
-        if not data["graded"][i]:
-            st.write("Essa resposta está correta?")
-            st.button("Sim", key=str(i) + "_yes")
-            st.button("Não", key=str(i) + "_no")
-        else:
-            if data["correct"][i]:
-                st.write("Essa resposta foi avaliada como correta")
-            else:
-                st.write("Essa resposta foi avaliada como errada")
+  if data["graded"][i] and data["role"][i] == "assistant":
+    if data["correct"][i]:
+      corr = corr + 1
+    else:
+      incorr = incorr + 1
+
+labels = 'Corretas', 'Incorretas'
+sizes = [corr, incorr]
+
+fig, ax = plt.subplots()
+ax.pie(sizes, labels=labels)
+
+st.pyplot(fig)

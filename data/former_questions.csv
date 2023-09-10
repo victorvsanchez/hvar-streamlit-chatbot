@@ -1,9 +1,9 @@
 ﻿user;msg_num;role;message;graded;correct
 Roberto;1;user;Quais são as leis brasileiras para as férias?;1;1
 Roberto;2;assistant;Resposta 1;1;1
-Roberto;3;user;Quem tem direito a férias de acordo com a lei brasileira?;1;0
-Roberto;4;assistant;Resposta 2;1;0
-Roberto;5;user;Quanto tempo de férias é permitido de acordo com a lei brasileira?;1;1
+Roberto;3;user;Quem tem direito a férias de acordo com a lei brasileira?;1;1
+Roberto;4;assistant;Resposta 2;1;1
+Roberto;5;user;Quanto tempo de férias é permitido de acordo com a lei brasileira?;1;0
 Roberto;6;assistant;Resposta 3;1;1
 Fábio;1;user;Qual é a duração máxima das férias de acordo com a lei brasileira?;0;1
 Fábio;2;assistant;Resposta 4;0;0
