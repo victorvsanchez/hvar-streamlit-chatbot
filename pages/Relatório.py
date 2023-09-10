@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotly.express as px
 import numpy as np
 
 #Load history data
@@ -25,11 +25,10 @@ for i in data.index:
 
 labels = 'Corretas', 'Incorretas'
 answers = [corr, incorr]
-fig, ax = plt.subplots()
-ax.pie(answers, labels=labels)
+fig = px.pie(df, values=[corr, incorr], names=["Respostas corretas", "Respostas incorretas"])
 
 st.header("Precisão das respostas")
-st.pyplot(fig)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 ### Número de perguntas
 df_counts = data[data['role']=='user'].groupby('user').count().reset_index()[['user', 'message']]

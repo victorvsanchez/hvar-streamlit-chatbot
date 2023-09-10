@@ -5,5 +5,5 @@ openai
 llama-index
 nltk
 pypdf
-matplotlib
+plotly
 numpy
