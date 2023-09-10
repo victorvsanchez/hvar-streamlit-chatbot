@@ -43,8 +43,8 @@ st.header("Número de perguntas por usuário")
 st.plotly_chart(fig2, theme=None, use_container_width=True)
 
 ### Número de requisições por dia
-dataframe = pd.DataFrame(np.random.randint(low=0, high=10, size = (len(days), 1)).tolist(), columns=["Número de respostas"])
 days = [i+1 for i in range(14)] + [i+1 for i in range(14)]
+dataframe = pd.DataFrame(np.random.randint(low=0, high=10, size = (len(days), 1)).tolist(), columns=["Número de respostas"])
 dataframe["Dia"] = days
 status = ["Respostas corretas" for i in range(14)] + ["Respostas incorretas" for i in range(14)]
 dataframe["Status"] = status
