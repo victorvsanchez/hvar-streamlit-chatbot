@@ -26,21 +26,21 @@ for i in data.index:
 
 labels = 'Corretas', 'Incorretas'
 answers = [corr, incorr]
-fig = px.pie(values=[corr, incorr], names=["Respostas corretas", "Respostas incorretas"])
+fig1 = px.pie(values=[corr, incorr], names=["Respostas corretas", "Respostas incorretas"])
 
 st.header("Precisão das respostas")
-st.plotly_chart(fig, theme=None, use_container_width=True)
+st.plotly_chart(fig1, theme=None, use_container_width=True)
 
 ### Número de perguntas
 df_counts = data[data['role']=='user'].groupby('user').count().reset_index()[['user', 'message']]
 df_counts.rename(columns={'user': 'Usuário', 'message': 'Número de mensagens'}, inplace=True)
-fig = go.Figure(go.Bar(
+fig2 = go.Figure(go.Bar(
             x=df_counts["Número de mensagens"],
             y=df_counts["Usuário"],
             orientation='h'))
 
 st.header("Número de perguntas por usuário")
-st.bar_chart(chart_data)
+st.plotly_chart(fig2, theme=None, use_container_width=True)
 
 ### Número de requisições por dia
 chart_data = pd.DataFrame(
