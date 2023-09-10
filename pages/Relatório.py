@@ -25,7 +25,7 @@ for i in data.index:
 
 labels = 'Corretas', 'Incorretas'
 answers = [corr, incorr]
-fig = px.pie(df, values=[corr, incorr], names=["Respostas corretas", "Respostas incorretas"])
+fig = px.pie(values=[corr, incorr], names=["Respostas corretas", "Respostas incorretas"])
 
 st.header("Precisão das respostas")
 st.plotly_chart(fig, theme=None, use_container_width=True)
