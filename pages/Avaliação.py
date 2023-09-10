@@ -11,7 +11,7 @@ for i in data.index:
             st.button("Sim", key=str(i) + "_yes")
             st.button("Não", key=str(i) + "_no")
         else:
-            if data["correct"][i]:
+            if data["correct"][i] and data["role"][i]=="assistant":
                 st.write("Essa resposta foi avaliada como correta")
             else:
                 st.write("Essa resposta foi avaliada como errada")
