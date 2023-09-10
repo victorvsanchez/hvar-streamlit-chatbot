@@ -11,15 +11,21 @@ for message in st.session_state.messages:
         data.loc[len(data.index)] = new_record
     msg_num = msg_num + 1
 
+def correct_answer(i):
+    return "Yes"
+
+def wrong_answer(i):
+    return "No"
+
 for i in data.index:
     with st.chat_message(data["role"][i]):
         st.write(data["message"][i])
         if not data["graded"][i] and data["role"][i]=="assistant":
             st.write("Essa resposta não foi avaliada ainda. Ela está correta?")
             if st.button("Sim", key=str(i) + "_hist_yes"):
-                st.write("Yes")
+                st.write(correct_answer(i))
             if st.button("Não", key=str(i) + "_hist_no"):
-                st.write("No")
+                st.write(wrong_answer(i))
 
         else:
             if data["correct"][i] and data["role"][i]=="assistant":
