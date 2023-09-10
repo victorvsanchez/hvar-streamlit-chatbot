@@ -45,12 +45,12 @@ st.plotly_chart(fig2, theme=None, use_container_width=True)
 ### Número de requisições por dia
 chart_data = pd.DataFrame(
     np.random.randn(20, 3),
-    columns = ['Número de perguntas', 'Respostas incorretas', 'Respostas corretas'])
+    columns = ['Dia', 'Respostas incorretas', 'Respostas corretas'])
 
 st.header("Número de requisições por dia")
 st.line_chart(
     chart_data,
-    x = 'Número de perguntas',
+    x = 'Dia',
     y = ['Respostas incorretas', 'Respostas corretas'],
     color = ['#FF0000', '#008000'] 
 )
