@@ -37,7 +37,7 @@ with st.sidebar:
     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
 openai.api_key = openai_api_key
-st.title("Chatbot PWC - Documentos de RH 💬")
+st.title("Chatbot PWC - RH 💬")
 
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
