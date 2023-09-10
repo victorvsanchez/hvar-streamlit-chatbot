@@ -15,5 +15,5 @@ for i in data.index:
                 st.write("Essa resposta foi avaliada como correta")
             elif not data["correct"][i] and data["role"][i]=="assistant":
                 st.write("Essa resposta foi avaliada como errada")
-        if data["role"][i] == "user":
+        if data["role"][i] == "assistant":
             st.divider()
