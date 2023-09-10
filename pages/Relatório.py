@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import numpy as np
 
 #Load history data
@@ -33,7 +34,10 @@ st.plotly_chart(fig, theme=None, use_container_width=True)
 ### Número de perguntas
 df_counts = data[data['role']=='user'].groupby('user').count().reset_index()[['user', 'message']]
 df_counts.rename(columns={'user': 'Usuário', 'message': 'Número de mensagens'}, inplace=True)
-chart_data = df_counts
+fig = go.Figure(go.Bar(
+            x=df_counts["Número de mensagens"],
+            y=df_counts["Usuário"],
+            orientation='h'))
 
 st.header("Número de perguntas por usuário")
 st.bar_chart(chart_data)
