@@ -23,6 +23,9 @@ def wrong_answer(i):
 
 for i in data.index:
     with st.chat_message(data["role"][i]):
+        if st.data["role"][i]=="assistant":
+            str_to_print = "Pergunta feita pelo usuário ***" + str(data["user"][i]) + "***"
+            st.write(str_to_print)
         st.write(data["message"][i])
         if not data["graded"][i] and data["role"][i]=="assistant":
             st.write("Essa resposta não foi avaliada ainda. Ela está correta?")
@@ -33,8 +36,8 @@ for i in data.index:
 
         else:
             if data["correct"][i] and data["role"][i]=="assistant":
-                st.write("Essa resposta foi avaliada como correta")
+                st.markdown("Essa resposta foi avaliada como ***correta***")
             elif not data["correct"][i] and data["role"][i]=="assistant":
-                st.write("Essa resposta foi avaliada como errada")
+                st.markdown("Essa resposta foi avaliada como ***errada***")
         if data["role"][i] == "assistant":
             st.divider()
