@@ -22,10 +22,10 @@ def wrong_answer(i):
     return 0
 
 for i in data.index:
+    if data["role"][i]=="user":
+        str_to_print = "Pergunta feita pelo usuário ***" + str(data["user"][i]) + "***"
+        st.write(str_to_print)
     with st.chat_message(data["role"][i]):
-        if data["role"][i]=="assistant":
-            str_to_print = "Pergunta feita pelo usuário ***" + str(data["user"][i]) + "***"
-            st.write(str_to_print)
         st.write(data["message"][i])
         if not data["graded"][i] and data["role"][i]=="assistant":
             st.write("Essa resposta não foi avaliada ainda. Ela está correta?")
