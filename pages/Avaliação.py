@@ -23,7 +23,7 @@ def wrong_answer(i):
 
 for i in data.index:
     with st.chat_message(data["role"][i]):
-        if st.data["role"][i]=="assistant":
+        if data["role"][i]=="assistant":
             str_to_print = "Pergunta feita pelo usuário ***" + str(data["user"][i]) + "***"
             st.write(str_to_print)
         st.write(data["message"][i])
