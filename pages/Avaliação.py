@@ -36,8 +36,8 @@ for i in data.index:
 
         else:
             if data["correct"][i] and data["role"][i]=="assistant":
-                st.markdown("Essa resposta foi avaliada como ***correta***")
+                st.markdown("Essa resposta foi avaliada como **correta**")
             elif not data["correct"][i] and data["role"][i]=="assistant":
-                st.markdown("Essa resposta foi avaliada como ***errada***")
+                st.markdown("Essa resposta foi avaliada como **errada**")
         if data["role"][i] == "assistant":
             st.divider()
